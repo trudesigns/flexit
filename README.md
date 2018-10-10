@@ -1,4 +1,5 @@
-# 5 Star Cologne MERN App
+# Flexit MERN App
+share healthy habits through exercise
 * Clone this repo
 
 ## Install app dependencies
@@ -22,3 +23,10 @@
 authenticate you need to create this file
 
 `variables.env`
+
+
+```
+MONGO_URI=put your mongo info here
+SECRET=put your secret here
+PORT=put your port here
+```
