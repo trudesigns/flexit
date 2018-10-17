@@ -1,4 +1,12 @@
-const express = require("express"); // did double quotes change after saving?
+const express = require("express"); 
+const mongoose = require("mongoose");
+
+require('dotenv').config({ path: '../variables.env'});
+// connect to db (add these lines)
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('DB connected'))
+  .catch(err => console.error(err));
 const app = express();
 
 const PORT = process.env.PORT || 4444;
