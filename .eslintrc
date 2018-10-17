@@ -1,4 +1,7 @@
 {
-  "singleQuote": true,
-  "trailingComma": "es5"
+  "extends": "react-app",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }
