@@ -19,7 +19,7 @@ const ExerciseSchema = new Schema({
   },
   createdDate: {
     type: Date,
-    defaul: Date.now,
+    default: Date.now,
   },
   likes: {
     type: Number,
