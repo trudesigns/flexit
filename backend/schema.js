@@ -16,4 +16,11 @@ exports.typeDefs = `
     joinDate: String
     favorites: [Exercise]
   }
+
+  type Query {
+    getAllExercises: [Exercise]
+  }
+
+  ttype Mutation { addExercise(exerciseName: String!, bodyPartCategory: String!, description: String!, username: String): Exercise
+  }
 `;
