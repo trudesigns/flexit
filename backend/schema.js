@@ -21,6 +21,6 @@ exports.typeDefs = `
     getAllExercises: [Exercise]
   }
 
-  ttype Mutation { addExercise(exerciseName: String!, bodyPartCategory: String!, description: String!, username: String): Exercise
+  type Mutation { addExercise(exerciseName: String!, bodyPartCategory: String!, description: String!, username: String): Exercise
   }
 `;
