@@ -12,7 +12,9 @@ import {
 } from 'react-router-dom';
 
 //styles
-import './index.css';
+//import './index.css';
+
+import './assets/scss/main.scss';
 // custom components
 import App from './components/App';
 import Landing from './components/Landing';
