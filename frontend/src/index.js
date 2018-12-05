@@ -20,6 +20,8 @@ import App from './components/App';
 import Styleguide from './components/Styleguide';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4444/graphql',
@@ -27,14 +29,18 @@ const client = new ApolloClient({
 
 const Root = () => (
   <Router>
-    <Switch>
-      <Route path="/" exact component={App} />
-      <Route path="/signin" component={Signin} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/Styleguide" component={Styleguide} />
+    <div id="wrapper">
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={App} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/Styleguide" component={Styleguide} />
 
-      <Redirect to="/" />
-    </Switch>
+        <Redirect to="/" />
+      </Switch>
+      <Footer />
+    </div>
   </Router>
 );
 
