@@ -17,7 +17,7 @@ import {
 import './assets/scss/main.scss';
 // custom components
 import App from './components/App';
-import Landing from './components/Landing';
+import Styleguide from './components/Styleguide';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 
@@ -31,7 +31,7 @@ const Root = () => (
       <Route path="/" exact component={App} />
       <Route path="/signin" component={Signin} />
       <Route path="/signup" component={Signup} />
-      <Route path="/Landing" component={Landing} />
+      <Route path="/Styleguide" component={Styleguide} />
 
       <Redirect to="/" />
     </Switch>
