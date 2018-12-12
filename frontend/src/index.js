@@ -21,7 +21,7 @@ import Styleguide from './components/Styleguide';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Navbar from './components/shared/Navbar';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4444/graphql',
