@@ -27,7 +27,7 @@
     "precommit": "pretty-quick --staged",
     "server": "nodemon backend/server.js",
     "client": "cd frontend && npm start",
-    "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
+    "dev": "concurrently --names \"server,client\" \"m  --silent\" \"npm run client --silent\""
   },
   "keywords": [],
   "author": "",

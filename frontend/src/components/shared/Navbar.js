@@ -16,6 +16,21 @@ const NavbarUnAuth = () => (
       </NavLink>
     </li>
     <li>
+      <NavLink to="/home">Home</NavLink>
+    </li>
+    <li>
+      <NavLink to="/account">Account</NavLink>
+    </li>
+    <li>
+      <NavLink to="/addvideo">Add Video</NavLink>
+    </li>
+    <li>
+      <NavLink to="/likes">Likes</NavLink>
+    </li>
+    <li>
+      <NavLink to="/about">About</NavLink>
+    </li>
+    <li>
       <NavLink to="/search">Search</NavLink>
     </li>
     <li>
