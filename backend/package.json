@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "precommit": "pretty-quick --staged",
-    "server": "nodemon server/server.js",
-    "client": "cd client && npm start",
-    "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
