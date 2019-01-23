@@ -1,5 +1,10 @@
 exports.resolvers = {
-  Query: { getAllExercises: () => {} },
+  Query: {
+    getAllExercises: async (root, args, { Exercise }) => {
+      const allExercise = await Exercise.find();
+      return allExercise;
+    },
+  },
 
   Mutation: {
     addExercise: async (
