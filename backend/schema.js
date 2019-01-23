@@ -1,4 +1,5 @@
 exports.typeDefs = `
+
   type Exercise {
     exerciseName: String!
     bodyPartCategory: String!
@@ -21,6 +22,6 @@ exports.typeDefs = `
     getAllExercises: [Exercise]
   }
 
-  type Mutation { addExercise(exerciseName: String!, bodyPartCategory: String!, description: String!, username: String): Exercise
-  }
-`;
+  type Mutation {
+    addExercise(exerciseName: String!, bodyPartCategory: String!, description: String!, username: String): Exercise
+  }`;
