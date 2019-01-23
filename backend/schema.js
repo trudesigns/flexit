@@ -23,5 +23,5 @@ exports.typeDefs = `
   }
 
   type Mutation {
-    addExercise(exerciseName: String!, bodyPartCategory: String!, description: String!, username: String): Exercise
+    addExercise(exerciseName: String!, bodyPartCategory: String!, typeCategory: String!, description: String!, username: String): Exercise
   }`;

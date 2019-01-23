@@ -11,7 +11,7 @@ const ExerciseSchema = new Schema({
     required: true,
   },
   typeCategory: {
-    type: Date,
+    type: String,
     required: true,
   },
   description: {
