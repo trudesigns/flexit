@@ -11,11 +11,6 @@ const Navbar = () => {
 const NavbarUnAuth = () => (
   <ul className="navbar">
     <li>
-      <NavLink to="/" exact>
-        Home
-      </NavLink>
-    </li>
-    <li>
       <NavLink to="/home">Home</NavLink>
     </li>
     <li>

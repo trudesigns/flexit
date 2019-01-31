@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Addvideo = () => {
-  return <div>Addvideo</div>;
-};
+export class Addvideo extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Add video</h1>
+      </div>
+    );
+  }
+}
 
 export default Addvideo;

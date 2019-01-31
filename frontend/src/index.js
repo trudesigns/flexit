@@ -39,15 +39,15 @@ const Root = () => (
       <Navbar />
       <Switch>
         <Route path="/" exact component={App} />
-        <Route path="/Home" component={Home} />
-        <Route path="/Addvideo" component={Addvideo} />
-        <Route path="/Likes" component={Likes} />
+        <Route path="/home" component={Home} />
+        <Route path="/addvideo" component={Addvideo} />
+        <Route path="/likes" component={Likes} />
         <Route path="/account" component={Account} />
-        <Route path="/serach" component={Search} />
+        <Route path="/search" component={Search} />
         <Route path="/about" component={About} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
-        <Route path="/Styleguide" component={Styleguide} />
+        <Route path="/styleguide" component={Styleguide} />
 
         <Redirect to="/" />
       </Switch>
