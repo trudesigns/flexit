@@ -24,6 +24,12 @@ exports.typeDefs = `
     getAllExercises: [Exercise]
   }
 
+  type Token {
+    token: String!
+  }
+
   type Mutation {
     addExercise(exerciseName: String!, bodyPartCategory: String!, typeCategory: String!, description: String!, username: String): Exercise
+
+     signupUser(username: String!, email: String!, password: String!): Token
   }`;
