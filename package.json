@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/trudesigns/flexit#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "concurrently": "^4.1.0",
     "mongoose": "^5.2.13"
   }
