@@ -18,8 +18,10 @@ import './assets/scss/main.scss';
 // custom components
 import App from './components/App';
 import Styleguide from './components/Styleguide';
-import Signin from './components/Signin';
-import Signup from './components/Signup';
+// import Signin from './components/Signin';
+// import Signup from './components/Signup';
+import SigninAuth from './components/auth/SigninAuth';
+import SignupAuth from './components/auth/SignupAuth';
 import Footer from './components/Footer';
 import Navbar from './components/shared/Navbar';
 import Search from './components/exercise/Search';
@@ -45,8 +47,8 @@ const Root = () => (
         <Route path="/account" component={Account} />
         <Route path="/search" component={Search} />
         <Route path="/about" component={About} />
-        <Route path="/signin" component={Signin} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/signin" component={SigninAuth} />
+        <Route path="/signup" component={SignupAuth} />
         <Route path="/styleguide" component={Styleguide} />
 
         <Redirect to="/" />
