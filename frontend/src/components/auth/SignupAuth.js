@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SignupAuth extends Component {
   state = {
-    username: '',
-    email: '',
-    password: '',
-    passwordConfirmation: '',
+    username: "",
+    email: "",
+    password: "",
+    passwordConfirmation: ""
   };
 
   handleChange = event => {
     const { name, value } = event.target;
     // console.log(name, ':', value);
+    this.setState({
+      [name]: value
+    });
   };
 
   render() {
+    const { username, email, password, passwordConfirmation } = this.state;
     return (
       <div className="App">
         <h2 className="App">SignupAuth</h2>
@@ -26,6 +30,8 @@ class SignupAuth extends Component {
               id="username"
               placeholder="Username"
               onChange={this.handleChange}
+              value={username}
+            />
             />
           </label>
           <label htmlFor="email">
@@ -36,6 +42,7 @@ class SignupAuth extends Component {
               id="email"
               placeholder="Email"
               onChange={this.handleChange}
+              value={email}
             />
           </label>
           <label htmlFor="password">
@@ -46,6 +53,7 @@ class SignupAuth extends Component {
               id="password"
               placeholder="Password"
               onChange={this.handleChange}
+              value={password}
             />
           </label>
           <label htmlFor="passwordConfirmation">
@@ -56,6 +64,7 @@ class SignupAuth extends Component {
               id="passwordConfirmation"
               placeholder="Confirm Password"
               onChange={this.handleChange}
+              value={passwordConfirmation}
             />
           </label>
           <div>
