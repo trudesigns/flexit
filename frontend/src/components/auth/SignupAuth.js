@@ -19,9 +19,8 @@ class SignupAuth extends Component {
 
   handleSubmit = (event, signupUser) => {
     event.preventDefault();
-    // console.log("submitted");
-    signupUser().then(({ data: { signupUser } }) => {
-      console.log(signupUser);
+    signupUser().then(({ data }) => {
+      console.log(data);
     });
   };
 
