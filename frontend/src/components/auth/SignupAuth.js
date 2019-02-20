@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
-import { SIGNUP_USER } from "../../queries/index.js";
+import { SIGNUP_USER_MUTATION } from "../../queries/index.js";
 import Error from "../Error";
 
 const initialState = {
@@ -52,7 +52,7 @@ class SignupAuth extends Component {
         <h2 className="App">SignupAuth</h2>
 
         <Mutation
-          mutation={SIGNUP_USER}
+          mutation={SIGNUP_USER_MUTATION}
           variables={{ username, email, password }}
         >
           {(signupUser, { data, loading, error }) => {

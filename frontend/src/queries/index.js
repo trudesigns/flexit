@@ -1,7 +1,7 @@
 import { gql } from "apollo-boost";
 //Exercise Queries
-export const GET_ALL_EXERCISES = gql`
-  query {
+export const GET_ALL_EXERCISES_QUERY = gql`
+  query GET_ALL_EXERCISES_QUERY {
     getAllExercises {
       exerciseName
       likes
@@ -15,8 +15,16 @@ export const GET_ALL_EXERCISES = gql`
 // User Queries
 
 // User Mutations
-export const SIGNUP_USER = gql`
-  mutation SIGNUP_USER(
+
+export const SIGNIN_USER_MUTATION = gql`
+  mutation SIGNIN_USER_MUTATION($username: String!, $password: String!) {
+    signinUser(username: $username, password: $password) {
+      token
+    }
+  }
+`;
+export const SIGNUP_USER_MUTATION = gql`
+  mutation SIGNUP_USER_MUTATION(
     $username: String!
     $email: String!
     $password: String!
