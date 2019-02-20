@@ -30,6 +30,6 @@ exports.typeDefs = `
 
   type Mutation {
     addExercise(exerciseName: String!, bodyPartCategory: String!, typeCategory: String!, description: String!, username: String): Exercise
-
+ signinUser(username: String!, password: String!): Token
      signupUser(username: String!, email: String!, password: String!): Token
   }`;
