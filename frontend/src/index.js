@@ -1,38 +1,57 @@
 //npm packages
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+import React from "react";
+import ReactDOM from "react-dom";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
 
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
-} from 'react-router-dom';
+  Redirect
+} from "react-router-dom";
 
 //styles
 //import './index.css';
 
-import './assets/scss/main.scss';
+import "./assets/scss/main.scss";
 // custom components
-import App from './components/App';
-import Styleguide from './components/Styleguide';
+import App from "./components/App";
+import Styleguide from "./components/Styleguide";
 // import Signin from './components/Signin';
 // import Signup from './components/Signup';
-import SigninAuth from './components/auth/SigninAuth';
-import SignupAuth from './components/auth/SignupAuth';
-import Footer from './components/Footer';
-import Navbar from './components/shared/Navbar';
-import Search from './components/exercise/Search';
-import About from './components/About';
-import Home from './components/Home';
-import Account from './components/Account';
-import Likes from './components/Likes';
-import Addvideo from './components/Addvideo';
+import SigninAuth from "./components/auth/SigninAuth";
+import SignupAuth from "./components/auth/SignupAuth";
+import Footer from "./components/Footer";
+import Navbar from "./components/shared/Navbar";
+import Search from "./components/exercise/Search";
+import About from "./components/About";
+import Home from "./components/Home";
+import Account from "./components/Account";
+import Likes from "./components/Likes";
+import Addvideo from "./components/Addvideo";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4444/graphql',
+  uri: "http://localhost:4444/graphql",
+
+  fetchOptions: {
+    credentials: "includes"
+  },
+
+  request: operation => {
+    const token = localStorage.getItem("token");
+    operation.setContext({
+      headers: {
+        authorization: token
+      }
+    });
+  },
+
+  onError: ({ networkError }) => {
+    if (networkError) {
+      console.log("Network Error", networkError);
+    }
+  }
 });
 
 const Root = () => (
@@ -62,5 +81,5 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <Root />
   </ApolloProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
