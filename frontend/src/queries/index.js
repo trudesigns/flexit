@@ -13,6 +13,15 @@ export const GET_ALL_EXERCISES_QUERY = gql`
 // Exercise Mutations
 
 // User Queries
+export const GET_CURRENT_USER_QUERY = gql`
+  query GET_CURRENT_USER_QUERY {
+    getCurrentUser {
+      username
+      email
+      joinDate
+    }
+  }
+`;
 
 // User Mutations
 

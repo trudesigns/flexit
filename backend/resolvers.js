@@ -11,6 +11,22 @@ exports.resolvers = {
     getAllExercises: async (root, args, { Exercise }) => {
       const allExercise = await Exercise.find();
       return allExercise;
+    },
+
+    getCurrentUser: async (root, args, { currentUser, User }) => {
+      //check if user is logged in
+      if (!currentUser) {
+        return null;
+      }
+      //user is logged in
+      //find them in the database
+      const user = await User.findOne({
+        username: currentUser.username
+      }).populate({
+        path: "favorites",
+        model: "Exercise" // make sure this is singular
+      });
+      return user; // if you leave this out you won't get the user
     }
   },
 

@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-
+import withSession from "./components/withSession";
 import {
   BrowserRouter as Router,
   Route,
@@ -77,9 +77,10 @@ const Root = () => (
   </Router>
 );
 
+const RootWithSession = withSession(Root);
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Root />
+    <RootWithSession />
   </ApolloProvider>,
   document.getElementById("root")
 );

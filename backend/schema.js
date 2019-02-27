@@ -22,6 +22,7 @@ exports.typeDefs = `
 
   type Query {
     getAllExercises: [Exercise]
+    getCurrentUser: User
   }
 
   type Token {
