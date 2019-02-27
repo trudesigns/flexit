@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { Mutation } from "react-apollo";
 import { SIGNIN_USER_MUTATION } from "../../queries";
 import Error from "../Error";
+import PropTypes from "prop-types";
 
 const initialState = {
   username: "",
@@ -9,6 +11,10 @@ const initialState = {
 };
 
 class SigninAuth extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  };
+
   state = {
     ...initialState
   };
@@ -28,12 +34,14 @@ class SigninAuth extends Component {
   };
 
   handleSubmit = (event, signinUser) => {
+    const { history } = this.props;
     event.preventDefault();
     signinUser().then(({ data }) => {
       // console.log(data);
       // console.log(data.data.signinUser.token);
       localStorage.setItem("token", data.signinUser.token);
       this.clearState();
+      history.push("/");
     });
   };
 
@@ -103,4 +111,4 @@ class SigninAuth extends Component {
   }
 }
 
-export default SigninAuth;
+export default withRouter(SigninAuth);

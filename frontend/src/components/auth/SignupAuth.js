@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
+import { withRouter } from "react-router-dom";
 import { SIGNUP_USER_MUTATION } from "../../queries/index.js";
+import PropTypes from "prop-types";
 import Error from "../Error";
 
 const initialState = {
@@ -30,11 +32,13 @@ class SignupAuth extends Component {
   };
 
   handleSubmit = (event, signupUser) => {
+    const { history } = this.props;
     event.preventDefault();
     signupUser().then(({ data }) => {
       console.log(signupUser);
       localStorage.setItem("token", data.signupUser.token);
       this.clearState();
+      history.push("/");
     });
   };
 
@@ -125,4 +129,4 @@ class SignupAuth extends Component {
   }
 }
 
-export default SignupAuth;
+export default withRouter(SignupAuth);
