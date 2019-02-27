@@ -35,7 +35,7 @@ const client = new ApolloClient({
   uri: "http://localhost:4444/graphql",
 
   fetchOptions: {
-    credentials: "includes"
+    credentials: "include"
   },
 
   request: operation => {

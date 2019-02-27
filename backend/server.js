@@ -1,6 +1,7 @@
 const express = require("express"); // did double quotes change after saving?
 const mongoose = require("mongoose");
 require("dotenv").config({ path: "./variables.env" });
+const jwt = require("jsonwebtoken");
 
 // graphql
 const { typeDefs } = require("./schema");
@@ -31,7 +32,14 @@ const app = express();
 // set up JWT authentication middleware
 app.use(async (req, res, next) => {
   const token = req.headers.authorization;
-  console.log(token);
+  if (token !== "null" && token !== "" && token !== undefined) {
+    try {
+      req.currentUser = await jwt.verify(token, process.env.SECRET);
+      // console.log(req.currentUser);
+    } catch (err) {
+      console.error(err);
+    }
+  }
   next();
 });
 
