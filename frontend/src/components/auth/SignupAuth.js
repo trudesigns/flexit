@@ -13,6 +13,11 @@ const initialState = {
 };
 
 class SignupAuth extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+    refetch: PropTypes.func.isRequired
+  };
+
   state = {
     ...initialState
   };
@@ -32,11 +37,12 @@ class SignupAuth extends Component {
   };
 
   handleSubmit = (event, signupUser) => {
-    const { history } = this.props;
+    const { history, refetch } = this.props;
     event.preventDefault();
     signupUser().then(({ data }) => {
       console.log(signupUser);
       localStorage.setItem("token", data.signupUser.token);
+      refetch();
       this.clearState();
       history.push("/");
     });
