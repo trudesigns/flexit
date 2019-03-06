@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SigninAuth from "../auth/SigninAuth";
 
+import Signout from "../auth/Signout";
 const NavbarAuth = ({ session }) => (
   <>
     <ul className="navbar">
@@ -25,11 +27,12 @@ const NavbarAuth = ({ session }) => (
       <li>
         <NavLink to="/search">Search</NavLink>
       </li>
-      <li>
-        <NavLink to="/signin">Signin</NavLink>
-      </li>
+
       <li>
         <NavLink to="/signup">Signup</NavLink>
+      </li>
+      <li>
+        <Signout />
       </li>
     </ul>
     <h2>Welcome {session.getCurrentUser.username}</h2>
