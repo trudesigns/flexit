@@ -15,7 +15,7 @@ import {
 //import './index.css';
 
 import "./assets/scss/main.scss";
-// custom components
+// custom public components
 import App from "./components/App";
 import Styleguide from "./components/Styleguide";
 // import Signin from './components/Signin';
@@ -30,6 +30,9 @@ import Home from "./components/Home";
 import Account from "./components/Account";
 import Likes from "./components/Likes";
 import Addvideo from "./components/Addvideo";
+//custom private components
+import AddExercise from "./components/exercise/AddExercise";
+import Profile from "./components/profile/Profile";
 
 const client = new ApolloClient({
   uri: "http://localhost:4444/graphql",
@@ -67,10 +70,11 @@ const Root = ({ refetch, session }) => (
         <Route path="/account" component={Account} />
         <Route path="/search" component={Search} />
         <Route path="/about" component={About} />
+        <Route path="/exercise/add" component={AddExercise} />
+        <Route path="/profile" component={Profile} />
+
         <Route path="/signin" render={() => <SigninAuth refetch={refetch} />} />
         <Route path="/signup" render={() => <SignupAuth refetch={refetch} />} />
-        {/* <Route path="/signin" component={SigninAuth} /> */}
-        {/* <Route path="/signup" component={SignupAuth} /> */}
         <Route path="/styleguide" component={Styleguide} />
 
         <Redirect to="/" />
